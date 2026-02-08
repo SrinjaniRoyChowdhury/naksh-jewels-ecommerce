@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
-import { formatPrice, truncateText, getImageUrl } from '../utils/helpers';
+import { formatPrice, truncateText } from '../utils/helpers';
 import '../styles/ProductCard.css';
 
 const ProductCard = ({ product }) => {

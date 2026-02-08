@@ -8,7 +8,7 @@ services:
     ports:
       - "27017:27017"
     environment:
-      - MONGO_INITDB_DATABASE=naksh-jewels
+      - MONGO_INITDB_DATABASE=nakshjewels  
     volumes:
       - mongodb_data:/data/db
     networks:
@@ -30,7 +30,7 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=5000
-      - MONGODB_URI=mongodb://mongodb:27017/nakshjewels
+      - MONGODB_URI=mongodb://mongodb:27017/nakshjewels  
     depends_on:
       mongodb:
         condition: service_healthy

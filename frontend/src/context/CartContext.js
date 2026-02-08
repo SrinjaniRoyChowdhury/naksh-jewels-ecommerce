@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useReducer, useEffect } from 'react';
+import { createContext, useContext, useReducer, useEffect } from 'react';
 
 const CartContext = createContext();
 
@@ -37,7 +37,7 @@ const cartReducer = (state, action) => {
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  // ✅ persistent session (no login needed)
+  // persistent session (no login needed)
   const getSessionId = () => {
     let id = localStorage.getItem('sessionId');
     if (!id) {
@@ -47,9 +47,7 @@ export const CartProvider = ({ children }) => {
     return id;
   };
 
-  // ========================
   // FETCH CART
-  // ========================
   const fetchCart = async () => {
     try {
       dispatch({ type: 'SET_LOADING', payload: true });
@@ -69,9 +67,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // ========================
   // ADD TO CART
-  // ========================
   const addToCart = async (productId, quantity = 1) => {
     try {
       dispatch({ type: 'SET_LOADING', payload: true });
@@ -102,9 +98,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // ========================
   // UPDATE QUANTITY
-  // ========================
   const updateCartItem = async (productId, quantity) => {
     try {
       dispatch({ type: 'SET_LOADING', payload: true });
@@ -131,9 +125,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // ========================
   // REMOVE ITEM
-  // ========================
   const removeFromCart = async (productId) => {
     try {
       dispatch({ type: 'SET_LOADING', payload: true });
@@ -159,9 +151,7 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  // ========================
   // CLEAR CART
-  // ========================
   const clearCart = async () => {
     try {
       dispatch({ type: 'SET_LOADING', payload: true });

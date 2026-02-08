@@ -1,4 +1,3 @@
-import React from 'react';
 import { useCart } from '../context/CartContext';
 import { formatPrice, getImageUrl } from '../utils/helpers';
 import '../styles/CartItem.css';

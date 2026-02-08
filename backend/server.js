@@ -37,7 +37,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // API Routes
 app.use('/api/products', productRoutes);
-app.use('/cart', cartRoutes);
+app.use('/api/cart', cartRoutes);
 
 // Root route
 app.get('/', (req, res) => {

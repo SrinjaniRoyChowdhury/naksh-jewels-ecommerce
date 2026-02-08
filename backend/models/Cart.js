@@ -43,4 +43,3 @@ cartSchema.methods.calculateTotal = async function () {
 };
 
 module.exports = mongoose.models.Cart || mongoose.model('Cart', cartSchema);
-
