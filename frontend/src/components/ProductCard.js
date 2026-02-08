@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
     <div className="product-card">
       <div className="product-image-container">
         <img
-          src={getImageUrl(product.image)}
+          src={product.image}
           alt={product.name}
           className="product-image"
           loading="lazy"

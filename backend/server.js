@@ -31,9 +31,13 @@ app.get('/api/health', (req, res) => {
   });
 });
 
+const path = require('path');
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 // API Routes
 app.use('/api/products', productRoutes);
-app.use('/api/cart', cartRoutes);
+app.use('/cart', cartRoutes);
 
 // Root route
 app.get('/', (req, res) => {

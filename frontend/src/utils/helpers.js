@@ -1,3 +1,5 @@
+const API_BASE = "http://localhost:5000";
+
 export const formatPrice = (price) => {
   return new Intl.NumberFormat('en-IN', {
     style: 'currency',
@@ -11,7 +13,10 @@ export const truncateText = (text, maxLength) => {
   return text.substring(0, maxLength) + '...';
 };
 
-export const getImageUrl = (url) => {
-  if (!url) return 'https://via.placeholder.com/300x300?text=No+Image';
-  return url;
+export const getImageUrl = (path) => {
+  if (!path) return 'https://via.placeholder.com/300x300?text=No+Image';
+
+  if (path.startsWith('http')) return path;
+
+  return `${API_BASE}${path}`;
 };

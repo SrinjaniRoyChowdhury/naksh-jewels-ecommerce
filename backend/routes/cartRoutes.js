@@ -25,7 +25,7 @@ const addToCartValidation = [
   body('quantity')
     .notEmpty()
     .withMessage('Quantity is required')
-    .isInt({ min: 1 })
+    .isInt({ min: 1 }).toInt()
     .withMessage('Quantity must be at least 1'),
 ];
 
@@ -41,7 +41,7 @@ const updateCartValidation = [
   body('quantity')
     .notEmpty()
     .withMessage('Quantity is required')
-    .isInt({ min: 0 })
+    .isInt({ min: 0 }).toInt()
     .withMessage('Quantity must be 0 or greater'),
 ];
 
